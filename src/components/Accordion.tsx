@@ -31,12 +31,13 @@ const Accordion: React.FC<AccordionProps> = ({
   };
 
   return (
-    <div className="border-b border-purple-100 py-6  first:pt-0 last:pb-0 last:border-0">
+    <section className="border-b border-purple-100 py-6  first:pt-0 last:pb-0 last:border-0">
       <button
         ref={buttonRef}
         id={`accordion-${id}-header`}
         aria-expanded={isOpen}
         aria-controls={`accordion-${id}-panel`}
+        type="button"
         onClick={onToggle}
         onKeyDown={handleKeyDown}
         className="flex items-center justify-between w-full cursor-pointer focus:outline-2 focus:outline-violet-600 focus:outline-offset-2"
@@ -61,7 +62,7 @@ const Accordion: React.FC<AccordionProps> = ({
       >
         <p className="text-preset-3 mt-6 ">{answer}</p>
       </div>
-    </div>
+    </section>
   );
 };
 export default Accordion;
