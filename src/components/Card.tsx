@@ -41,7 +41,7 @@ const Card = () => {
         <img src="/images/icon-star.svg" alt="icon star" />
         <h1 className="text-preset-1">FAQs</h1>
       </div>
-      <div>
+      <section>
         {faqs.map((faq, index) => {
           return (
             <Accordion
@@ -59,7 +59,7 @@ const Card = () => {
             />
           );
         })}
-      </div>
+      </section>
     </main>
   );
 };
