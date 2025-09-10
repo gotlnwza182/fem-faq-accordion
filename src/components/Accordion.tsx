@@ -54,7 +54,7 @@ const Accordion: React.FC<AccordionProps> = ({
         </button>
       </h2>
 
-      <section
+      <div
         id={`accordion-${id}-panel`}
         role="region"
         aria-labelledby={`accordion-${id}-header`}
@@ -63,7 +63,7 @@ const Accordion: React.FC<AccordionProps> = ({
         }`}
       >
         <p className="text-preset-3 mt-6 ">{answer}</p>
-      </section>
+      </div>
     </li>
   );
 };
