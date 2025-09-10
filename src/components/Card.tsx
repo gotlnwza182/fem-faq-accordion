@@ -42,9 +42,9 @@ const Card = () => {
     >
       <header className="flex gap-6 mb-6">
         <img src="/images/icon-star.svg" alt="icon star" />
-        <h2 className="text-preset-1">FAQs</h2>
+        <h1 className="text-preset-1">FAQs</h1>
       </header>
-      <div>
+      <ul>
         {faqs.map((faq, index) => {
           return (
             <Accordion
@@ -62,7 +62,7 @@ const Card = () => {
             />
           );
         })}
-      </div>
+      </น>
     </section>
   );
 };

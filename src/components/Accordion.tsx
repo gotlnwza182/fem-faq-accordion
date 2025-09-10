@@ -31,8 +31,8 @@ const Accordion: React.FC<AccordionProps> = ({
   };
 
   return (
-    <article className="border-b border-purple-100 py-6  first:pt-0 last:pb-0 last:border-0">
-      <h3>
+    <li className="border-b border-purple-100 py-6  first:pt-0 last:pb-0 last:border-0">
+      <h2>
         <button
           ref={buttonRef}
           id={`accordion-${id}-header`}
@@ -52,9 +52,9 @@ const Accordion: React.FC<AccordionProps> = ({
             )}
           </span>
         </button>
-      </h3>
+      </h2>
 
-      <div
+      <section
         id={`accordion-${id}-panel`}
         role="region"
         aria-labelledby={`accordion-${id}-header`}
@@ -63,8 +63,8 @@ const Accordion: React.FC<AccordionProps> = ({
         }`}
       >
         <p className="text-preset-3 mt-6 ">{answer}</p>
-      </div>
-    </article>
+      </section>
+    </li>
   );
 };
 export default Accordion;
