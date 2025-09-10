@@ -1,0 +1,42 @@
+@import url("https://fonts.googleapis.com/css2?family=Work+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+
+@import "tailwindcss";
+
+@theme {
+  --font-work-sans: "Work Sans", sans-serif;
+
+  --color-purple-100: #f8eeff;
+  --color-purple-600: #8b6990;
+  --color-purple-950: #301534;
+
+  --color-violet-600: #ad28eb;
+}
+
+@utility text-preset-1 {
+  font-family: var(--font-work-sans);
+  font-size: 32px;
+  font-weight: 700;
+  @media (min-width: 768px) {
+    font-size: 56px;
+    line-height: 66px;
+  }
+}
+@utility text-preset-2 {
+  font-family: var(--font-work-sans);
+  font-size: 16px;
+  font-weight: 600;
+  @media (min-width: 768px) {
+    font-size: 18px;
+    line-height: 21px;
+  }
+}
+@utility text-preset-3 {
+  font-family: var(--font-work-sans);
+  font-size: 14px;
+  line-height: 150%;
+  font-weight: 400;
+  @media (min-width: 768px) {
+    font-size: 16px;
+    line-height: 24px;
+  }
+}
