@@ -31,7 +31,7 @@ const Accordion: React.FC<AccordionProps> = ({
   };
 
   return (
-    <section className="border-b border-purple-100 py-6  first:pt-0 last:pb-0 last:border-0">
+    <article className="border-b border-purple-100 py-6  first:pt-0 last:pb-0 last:border-0">
       <button
         ref={buttonRef}
         id={`accordion-${id}-header`}
@@ -42,7 +42,7 @@ const Accordion: React.FC<AccordionProps> = ({
         onKeyDown={handleKeyDown}
         className="flex items-center justify-between w-full cursor-pointer focus:outline-2 focus:outline-violet-600 focus:outline-offset-2"
       >
-        <span className="text-preset-2 w-11/12  text-start">{question}</span>
+        <h3 className="text-preset-2 w-11/12  text-start">{question}</h3>
         <span aria-hidden={!isOpen}>
           {!isOpen ? (
             <img src="/images/icon-plus.svg" alt="expanded icon" />
@@ -62,7 +62,7 @@ const Accordion: React.FC<AccordionProps> = ({
       >
         <p className="text-preset-3 mt-6 ">{answer}</p>
       </div>
-    </section>
+    </article>
   );
 };
 export default Accordion;
