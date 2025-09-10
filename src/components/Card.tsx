@@ -1,12 +1,19 @@
-import { useState } from "react";
+import { useCallback, useRef, useState } from "react";
 import Accordion from "./Accordion";
 
 const Card = () => {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
-  const buttonRefs: (HTMLButtonElement | null)[] = [];
+  const buttonRefs = useRef<(HTMLButtonElement | null)[]>([]);
+
+  const setButtonRef = useCallback(
+    (index: number, el: HTMLButtonElement | null) => {
+      buttonRefs.current[index] = el;
+    },
+    []
+  );
 
   const focusItem = (index: number) => {
-    buttonRefs[index]?.focus();
+    buttonRefs.current[index]?.focus();
   };
 
   const faqs = [
@@ -44,7 +51,7 @@ const Card = () => {
               answer={faq.a}
               isOpen={openIndex === index}
               onToggle={() => setOpenIndex(openIndex === index ? null : index)}
-              buttonRef={(el) => (buttonRefs[index] = el)}
+              buttonRef={(el) => setButtonRef(index, el)}
               focusNext={() => focusItem((index + 1) % faqs.length)}
               focusPrev={() =>
                 focusItem((index - 1 + faqs.length) % faqs.length)
