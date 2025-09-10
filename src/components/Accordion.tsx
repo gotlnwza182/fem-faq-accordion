@@ -31,26 +31,28 @@ const Accordion: React.FC<AccordionProps> = ({
   };
 
   return (
-    <div className="border-b border-purple-100 py-6  first:pt-0 last:pb-0 last:border-0">
-      <button
-        ref={buttonRef}
-        id={`accordion-${id}-header`}
-        aria-expanded={isOpen}
-        aria-controls={`accordion-${id}-panel`}
-        type="button"
-        onClick={onToggle}
-        onKeyDown={handleKeyDown}
-        className="flex items-center justify-between w-full cursor-pointer focus:outline-2 focus:outline-violet-600 focus:outline-offset-2"
-      >
-        <span className="text-preset-2 w-11/12  text-start">{question}</span>
-        <span aria-hidden={!isOpen}>
-          {!isOpen ? (
-            <img src="/images/icon-plus.svg" alt="expanded icon" />
-          ) : (
-            <img src="/images/icon-minus.svg" alt="expanded icon" />
-          )}
-        </span>
-      </button>
+    <article className="border-b border-purple-100 py-6  first:pt-0 last:pb-0 last:border-0">
+      <h3>
+        <button
+          ref={buttonRef}
+          id={`accordion-${id}-header`}
+          aria-expanded={isOpen}
+          aria-controls={`accordion-${id}-panel`}
+          type="button"
+          onClick={onToggle}
+          onKeyDown={handleKeyDown}
+          className="flex items-center justify-between w-full cursor-pointer focus:outline-2 focus:outline-violet-600 focus:outline-offset-2"
+        >
+          <span className="text-preset-2 w-11/12  text-start">{question}</span>
+          <span aria-hidden={!isOpen}>
+            {!isOpen ? (
+              <img src="/images/icon-plus.svg" alt="expanded icon" />
+            ) : (
+              <img src="/images/icon-minus.svg" alt="expanded icon" />
+            )}
+          </span>
+        </button>
+      </h3>
 
       <div
         id={`accordion-${id}-panel`}
@@ -62,7 +64,7 @@ const Accordion: React.FC<AccordionProps> = ({
       >
         <p className="text-preset-3 mt-6 ">{answer}</p>
       </div>
-    </div>
+    </article>
   );
 };
 export default Accordion;

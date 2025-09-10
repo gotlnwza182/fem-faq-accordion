@@ -36,12 +36,15 @@ const Card = () => {
   ];
 
   return (
-    <main className="max-w-81.75 bg-white text-purple-950 p-6 rounded-lg md:max-w-150 md:p-10">
-      <div className="flex gap-6 mb-6">
+    <section
+      aria-labelledby="faq-heading"
+      className="max-w-81.75 bg-white text-purple-950 p-6 rounded-lg md:max-w-150 md:p-10"
+    >
+      <header className="flex gap-6 mb-6">
         <img src="/images/icon-star.svg" alt="icon star" />
-        <h1 className="text-preset-1">FAQs</h1>
-      </div>
-      <section>
+        <h2 className="text-preset-1">FAQs</h2>
+      </header>
+      <div>
         {faqs.map((faq, index) => {
           return (
             <Accordion
@@ -59,8 +62,8 @@ const Card = () => {
             />
           );
         })}
-      </section>
-    </main>
+      </div>
+    </section>
   );
 };
 export default Card;
