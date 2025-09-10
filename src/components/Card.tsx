@@ -29,7 +29,7 @@ const Card = () => {
   ];
 
   return (
-    <div className="max-w-81.75 bg-white text-purple-950 p-6 rounded-lg md:max-w-150 md:p-10">
+    <main className="max-w-81.75 bg-white text-purple-950 p-6 rounded-lg md:max-w-150 md:p-10">
       <div className="flex gap-6 mb-6">
         <img src="/images/icon-star.svg" alt="icon star" />
         <h1 className="text-preset-1">FAQs</h1>
@@ -44,7 +44,7 @@ const Card = () => {
               answer={faq.a}
               isOpen={openIndex === index}
               onToggle={() => setOpenIndex(openIndex === index ? null : index)}
-              buttonRef={(el) => buttonRefs[index] = el}
+              buttonRef={(el) => (buttonRefs[index] = el)}
               focusNext={() => focusItem((index + 1) % faqs.length)}
               focusPrev={() =>
                 focusItem((index - 1 + faqs.length) % faqs.length)
@@ -53,7 +53,7 @@ const Card = () => {
           );
         })}
       </div>
-    </div>
+    </main>
   );
 };
 export default Card;
