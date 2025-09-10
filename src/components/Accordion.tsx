@@ -39,7 +39,7 @@ const Accordion: React.FC<AccordionProps> = ({
         aria-controls={`accordion-${id}-panel`}
         onClick={onToggle}
         onKeyDown={handleKeyDown}
-        className="flex items-center justify-between w-full cursor-pointer"
+        className="flex items-center justify-between w-full cursor-pointer focus:outline-2 focus:outline-violet-600 focus:outline-offset-2"
       >
         <span className="text-preset-2 w-11/12  text-start">{question}</span>
         <span>
